@@ -9,7 +9,7 @@ polly_client = boto3.client('polly')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_file('index.html')
 
 @app.route('/synthesize', methods=['POST'])
 def synthesize_speech():
