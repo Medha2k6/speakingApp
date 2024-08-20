@@ -4,8 +4,9 @@ import io
 
 app = Flask(__name__)
 
+region = os.getenv('AWS_REGION', 'ap-south-1')
 # Initialize the Polly client
-polly_client = boto3.client('polly')
+polly_client = boto3.client('polly',region_name=region)
 
 @app.route('/')
 def index():
